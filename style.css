@@ -90,7 +90,12 @@ table td{
 
 }
 
+
+.hidden{
+    color: transparent;
+}
+
 h3{
     font-size: 20px;
     color: aliceblue;
-}
+
