@@ -9,6 +9,9 @@
         <meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
         <title> Mario Suso y Nicole Pinto</title>
         <link rel="stylesheet" href="style.css"/>
+        <script type="text/javascript" src="clave.js" defer></script>
+        <script type="text/javascript" src="main.js" defer></script>
+
     </head>
     <body>
         <div class="container">
@@ -16,6 +19,12 @@
         <h2> Ahorcado</h2>
         <hr>
         <p>Bienvenidos a nuestro juego</p>
+        <div>
+            <canvas id="canvas"></canvas>
+            <div id="LetrasUsadas"></div>
+        </div>
+        <div id="palabra"></div>
+        <button id="start"> START</button>
         <table border="1">
             <tr>
                 <td>Intentos</td>
