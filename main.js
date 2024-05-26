@@ -3,11 +3,16 @@ const BotonStart = document.getElementById("start");
 const LetrasUsadas = document.getElementById("LetrasUsadas");
 
 
-function obtenerPalabraRandom(palabras) {
-    const indiceRandom = Math.floor(Math.random() * palabras.length);
-    const palabraRandom = palabras[indiceRandom];
-    console.log(palabraRandom, pista);
+const tecladoDiv = document.querySelector(".teclado");
+
+
+for (let letra = 97; letra <= 122; letra++) {
+    const boton = document.createElement("button");
+    boton.innerText = String.fromCharCode(letra);
+    tecladoDiv.appendChild(boton)
+
 }
+
 
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
@@ -29,6 +34,7 @@ const cuerpo = [
 let palabraSelec;
 let LetrasUsed;
 let errores;
+
 let puntos;
 
 const dibujar = () => {
@@ -56,4 +62,4 @@ const dibujar = () => {
 
 BotonStart.addEventListener("click", startGame);
 
-  
+
