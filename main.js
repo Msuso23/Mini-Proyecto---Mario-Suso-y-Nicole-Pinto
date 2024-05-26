@@ -1,15 +1,25 @@
 const palabra = document.getElementById("palabra");
 const BotonStart = document.getElementById("start");
+const BotonREStart = document.getElementById("Restart");
 const LetrasUsadas = document.getElementById("LetrasUsadas");
+const intentosCell = document.querySelector("tr:nth-child(2) td:nth-child(1)");
+const puntosCell = document.querySelector("tr:nth-child(2) td:nth-child(2)");
+const victoriasCell = document.querySelector("tr:nth-child(2) td:nth-child(3)");
+
 
 let LetrasUsed;
 let errores;
 let palabraActual;
 let puntos;
+let intentos;
+let cont;
+let victorias;
 
 const tecladoDiv = document.querySelector(".teclado");
 
 const Jugar=(boton, letraselec)=>{
+    intentos ++;
+    intentosCell.innerHTML = intentos;
     console.log(palabraActual);
     if ((palabraActual).includes(letraselec)){
         [...palabraActual].forEach((letter,index)=>{
@@ -17,11 +27,23 @@ const Jugar=(boton, letraselec)=>{
                 const ELetra = palabra.children[index];
             ELetra.classList.remove("hidden");
             puntos++;
+            puntosCell.innerHTML = puntos;
+            cont ++;
+            if(cont===palabraActual.length){
+                REstartJuego();
+                victorias++;
+                victoriasCell.innerHTML= victorias;
+
             }
+
+            }
+            
         })
     }else{
         errores++; 
         
+
+
         LetrasUsed.push(letraselec); 
         LetrasUsadas.innerHTML += `<span>${letraselec}</span>`; 
         AddParte(cuerpo[errores-1]);
@@ -32,7 +54,10 @@ const Jugar=(boton, letraselec)=>{
 }
 
 const cerrarJuego = () =>{
+    pistaElement.innerHTML = "Perdiste";
 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dibujar();
 }
 
 const PalabraRandom = ()=>{
@@ -118,6 +143,8 @@ const dibujar = () => {
     LetrasUsed=[];
     errores = 0;
     puntos = 0;
+    intentos = 0;
+    cont =0;
     palabra.innerHTML= "";
     LetrasUsadas.innerHTML = "";
     BotonStart.style.display = "none";
@@ -128,4 +155,19 @@ const dibujar = () => {
 };
 
 BotonStart.addEventListener("click", startJuego);
+
+const REstartJuego = () => {
+    cont =0;
+    LetrasUsed=[];
+    palabra.innerHTML= "";
+    LetrasUsadas.innerHTML = "";
+    BotonStart.style.display = "none";
+    PalabraRandom();
+    dibujar();    
+    dibujarPalabra();
+    
+};
+
+BotonREStart.addEventListener("click", REstartJuego);
+
 
