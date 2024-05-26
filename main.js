@@ -13,6 +13,19 @@ for (let letra = 97; letra <= 122; letra++) {
 
 }
 
+function seleccionarPalabraAleatoria() {
+    const indiceAleatorio = Math.floor(Math.random() * palabras.length);
+    const palabraAleatoria = palabras[indiceAleatorio];
+    return palabraAleatoria;
+}
+
+function mostrarPista(palabra) {
+    const pistaElement = document.getElementById("pista");
+    pistaElement.innerHTML = `Pista: <b>${palabra.pista}</b>`;
+}
+
+const palabraAleatoria = seleccionarPalabraAleatoria();
+mostrarPista(palabraAleatoria);
 
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
@@ -61,5 +74,4 @@ const dibujar = () => {
 };
 
 BotonStart.addEventListener("click", startGame);
-
 
