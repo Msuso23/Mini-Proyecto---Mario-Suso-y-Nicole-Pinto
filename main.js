@@ -20,18 +20,29 @@ const Jugar=(boton, letraselec)=>{
             }
         })
     }else{
+        errores++; 
         
+        LetrasUsed.push(letraselec); 
+        LetrasUsadas.innerHTML += `<span>${letraselec}</span>`; 
+        AddParte(cuerpo[errores-1]);
+        if(errores ===6){
+            cerrarJuego();
+        }
     }
+}
+
+const cerrarJuego = () =>{
+
 }
 
 const PalabraRandom = ()=>{
     const {palabra, pista} = palabras[Math.floor(Math.random() * palabras.length)];
     palabraActual=palabra;
+    PistaActual = pista;
     console.log(palabra,pista);
+    const pistaElement = document.getElementById("pista");
+    pistaElement.innerHTML = `Pista: <b>${pista}</b>`;
     
-    
-
-
 }
 
 for (let letra = 97; letra <= 122; letra++) {
@@ -77,7 +88,18 @@ const cuerpo = [
 
 ]
 
+const AddParte = cuerpo =>{
+    ctx.fillStyle = "#FFFFFF";
+    ctx.fillRect(...cuerpo);
+}
 
+
+
+Addletras = letra =>{
+    const ELetra = document.createElement("span");
+    ELetra.innerHTML = letter.toUpperCase();
+    LetrasUsadas.appendChild(ELetra);
+}
 
 const dibujar = () => {
     ctx.canvas.width=120;
