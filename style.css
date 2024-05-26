@@ -46,7 +46,10 @@ table{
     background-color: bisque;
     border-collapse: collapse;
     width: 30%;
-
+    margin-top: 100px;
+    padding: auto;
+    margin-left: 500px;
+    margin-right: 500px;
 }
 table tr{
     font-size: 30px;
@@ -68,7 +71,7 @@ table td{
     flex-wrap:wrap;
     justify-content: center;
     flex-direction: row; 
-    margin-top: 220px;
+    margin-top: 450px;
 
 }
   
@@ -85,4 +88,9 @@ table td{
     padding: 7px;
     margin-block-start: 10px;
 
+}
+
+h3{
+    font-size: 20px;
+    color: aliceblue;
 }
