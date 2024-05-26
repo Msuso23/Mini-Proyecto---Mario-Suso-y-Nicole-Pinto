@@ -10,16 +10,42 @@ body{
 
 .container{
     text-align: center;
+
 }
 
 h1{
     font-size: 50px;    
+    margin-top: 20px; 
+    margin-bottom: 10px;
 }
 
 h2{
     font-size: 30px;
+    margin-top: 40px; 
+    margin-bottom: 20px
 }
 
 p{
     font-size: 20px;
+    margin-top: 20px; 
+    margin-bottom: 10px
+}
+table{
+
+    border: 4px solid;
+    background-color: bisque;
+    border-collapse: collapse;
+    width: 30%;
+}
+table tr{
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+    border: 4px solid darkgreen;
+}
+table td{
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    border: 4px solid darkgreen;
 }
