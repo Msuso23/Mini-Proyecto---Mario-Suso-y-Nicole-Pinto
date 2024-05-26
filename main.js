@@ -2,6 +2,10 @@ const palabra = document.getElementById("palabra");
 const BotonStart = document.getElementById("start");
 const LetrasUsadas = document.getElementById("LetrasUsadas");
 
+let LetrasUsed;
+let errores;
+let palabraActual;
+let puntos;
 
 const tecladoDiv = document.querySelector(".teclado");
 
@@ -9,14 +13,26 @@ const tecladoDiv = document.querySelector(".teclado");
 for (let letra = 97; letra <= 122; letra++) {
     const boton = document.createElement("button");
     boton.innerText = String.fromCharCode(letra);
-    tecladoDiv.appendChild(boton)
-
+    tecladoDiv.appendChild(boton);
+    
 }
 
 function seleccionarPalabraAleatoria() {
     const indiceAleatorio = Math.floor(Math.random() * palabras.length);
     const palabraAleatoria = palabras[indiceAleatorio];
+    const palabraActual = palabraAleatoria.palabra;
+    palabraActual.toUpperCase();
+    palabraActual.split("")
     return palabraAleatoria;
+}
+
+function seleccionarPalabraAleatoria2() {
+    const indiceAleatorio = Math.floor(Math.random() * palabras.length);
+    const palabraAleatoria = palabras[indiceAleatorio];
+    const palabraActual = palabraAleatoria.palabra;
+    palabraActual.toUpperCase();
+    palabraActual.split("")
+    return palabraActual;
 }
 
 function mostrarPista(palabra) {
@@ -24,13 +40,25 @@ function mostrarPista(palabra) {
     pistaElement.innerHTML = `Pista: <b>${palabra.pista}</b>`;
 }
 
-const palabraAleatoria = seleccionarPalabraAleatoria();
-mostrarPista(palabraAleatoria);
 
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 ctx.canvas.width = 2;
 ctx.canvas.height = 0;
+
+const dibujarPalabra = () =>{
+    palabraActu = seleccionarPalabraAleatoria2().toUpperCase().split("");
+
+
+    for (let i = 0; i < palabraActu.length; i++) {
+        const letter = palabraActu[i];
+        const ELetra = document.createElement("span");
+        ELetra.innerHTML = letter;
+        ELetra.classList.add("letter");
+        ELetra.classList.add("hidden");
+        palabra.appendChild(ELetra);
+    }
+}
 
 
 
@@ -44,11 +72,7 @@ const cuerpo = [
 
 ]
 
-let palabraSelec;
-let LetrasUsed;
-let errores;
 
-let puntos;
 
 const dibujar = () => {
     ctx.canvas.width=120;
@@ -70,7 +94,11 @@ const dibujar = () => {
     palabra.innerHTML= "";
     LetrasUsadas.innerHTML = "";
     BotonStart.style.display = "none";
+    const palabraAleatoria = seleccionarPalabraAleatoria();
+    mostrarPista(palabraAleatoria);
     dibujar();    
+    dibujarPalabra();
+    
 };
 
 BotonStart.addEventListener("click", startGame);
