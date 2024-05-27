@@ -8,7 +8,9 @@ body{
     margin: 0;
     padding: 0;    
     padding: 30px;
-    min-height: 130vh;
+
+    min-height: 120vh;
+
 }
 
 .container{
@@ -35,10 +37,13 @@ h2{
     margin-bottom: 20px
 }
 
-p{
+{
+
+
     font-size: 20px;
     margin-top: 20px; 
-    margin-bottom: 10px
+    padding-bottom: 30px;
+
 }
 table{
 
@@ -46,7 +51,9 @@ table{
     background-color: bisque;
     border-collapse: collapse;
     width: 30%;
-    margin-top: 100px;
+
+    margin-top: 60px;
+
     padding: auto;
     margin-left: 500px;
     margin-right: 500px;
@@ -71,7 +78,9 @@ table td{
     flex-wrap:wrap;
     justify-content: center;
     flex-direction: row; 
-    margin-top: 450px;
+
+    margin-top: 40px;
+
 
 }
   
@@ -96,6 +105,32 @@ table td{
 }
 
 h3{
+
+    margin-top: 70px;
     font-size: 20px;
     color: aliceblue;
+
+}
+.letter{
+    margin: 20px;
+    position: relative;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.letter::after{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    min-width: 12px;
+
+}
+
+
 
