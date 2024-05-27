@@ -29,9 +29,6 @@ const Jugar=(boton, letraselec)=>{
                 const ELetra = palabra.children[index];
             ELetra.classList.remove("hidden");
             puntos++;
-
-            }
-
             puntosCell.innerHTML = puntos;
             cont ++;
             if(cont===palabraActual.length){
@@ -42,11 +39,12 @@ const Jugar=(boton, letraselec)=>{
             }
 
             }
-
+            
         })
     }else{
         errores++; 
         
+
 
         LetrasUsed.push(letraselec); 
         LetrasUsadas.innerHTML += `<span>${letraselec}</span>`; 
@@ -57,9 +55,11 @@ const Jugar=(boton, letraselec)=>{
     }
 }
 
-const cerrarJuego = () =>{
 
-    pistaElement.innerHTML = "Perdiste";
+
+
+
+const cerrarJuego = () =>{
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     dibujar();
