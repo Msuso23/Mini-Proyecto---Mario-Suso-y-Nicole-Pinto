@@ -54,7 +54,6 @@ const Jugar=(boton, letraselec)=>{
 }
 
 const cerrarJuego = () =>{
-    pistaElement.innerHTML = "Perdiste";
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     dibujar();
