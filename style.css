@@ -8,7 +8,9 @@ body{
     margin: 0;
     padding: 0;    
     padding: 30px;
+
     min-height: 120vh;
+
 }
 
 .container{
@@ -35,12 +37,13 @@ h2{
     margin-bottom: 20px
 }
 
-p{
+{
+
 
     font-size: 20px;
     margin-top: 20px; 
     padding-bottom: 30px;
-    
+
 }
 table{
 
@@ -48,7 +51,9 @@ table{
     background-color: bisque;
     border-collapse: collapse;
     width: 30%;
+
     margin-top: 60px;
+
     padding: auto;
     margin-left: 500px;
     margin-right: 500px;
@@ -73,7 +78,9 @@ table td{
     flex-wrap:wrap;
     justify-content: center;
     flex-direction: row; 
+
     margin-top: 40px;
+
 
 }
   
@@ -124,3 +131,6 @@ h3{
     min-width: 12px;
 
 }
+
+
+
