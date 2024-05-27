@@ -8,14 +8,14 @@ body{
     margin: 0;
     padding: 0;    
     padding: 30px;
-
     min-height: 120vh;
 
 }
 
 .container{
     text-align: center;
-    width: 1400px;
+    max-width:90%;
+    margin:auto;
     border: 30px solid rgba(147, 84, 33, 0.93);
     padding: 30px;
     background-image: url(pizarra.jpeg);
@@ -26,13 +26,13 @@ body{
 }
 
 h1{
-    font-size: 50px;    
+    font-size: 2.5rem;    
     margin-top: 30px; 
     margin-bottom: 10px;
 }
 
 h2{
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-top: 40px; 
     margin-bottom: 20px
 }
@@ -40,7 +40,7 @@ h2{
 p{
 
 
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-top: 20px; 
     padding-bottom: 30px;
 
@@ -50,38 +50,29 @@ table{
     border: 4px solid;
     background-color: bisque;
     border-collapse: collapse;
-    width: 30%;
-
-    margin-top: 60px;
-
-    padding: auto;
-    margin-left: 500px;
-    margin-right: 500px;
+    width: 100%;
+    max-width: 500px;
+    margin: 60px auto 0 auto;
 }
 table tr{
-    font-size: 30px;
+    font-size: 1.875rem;
     text-align: center;
     padding: 10px;
     border: 4px solid darkgreen;
 }
 table td{
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
     padding: 10px;
     border: 4px solid darkgreen;
+    
 }
 .container .teclado {
     display: flex;
     gap:5px;
-    padding-left: 300px;
-    padding-right: 300px;
     flex-wrap:wrap;
     justify-content: center;
-    flex-direction: row; 
-
     margin-top: 40px;
-
-
 }
   
 .teclado button {
@@ -107,7 +98,7 @@ table td{
 h3{
 
     margin-top: 70px;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: aliceblue;
 
 }
@@ -115,8 +106,7 @@ h3{
     margin: 20px;
     position: relative;
     text-align: center;
-    margin-left: 20px;
-    margin-right: 20px;
+
 
 }
 
@@ -132,5 +122,72 @@ h3{
 
 }
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
 
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p, h3 {
+        font-size: 1rem;
+    }
+
+    table {
+        font-size: 1rem;
+    }
+
+    table tr {
+        font-size: 1rem;
+    }
+
+    table td {
+        font-size: 0.875rem;
+    }
+
+    .teclado button {
+        width: calc(100% / 9 - 1px);
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        border-width: 15px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p, h3 {
+        font-size: 0.875rem;
+    }
+
+    table {
+        font-size: 0.875rem;
+        max-width: 100%;
+    }
+
+    table tr {
+        font-size: 0.875rem;
+    }
+
+    table td {
+        font-size: 0.75rem;
+    }
+
+    .teclado button {
+        width: calc(100% / 9 - 1px);
+        padding: 5px;
+        font-size: 0.875rem;
+    }
+}
 

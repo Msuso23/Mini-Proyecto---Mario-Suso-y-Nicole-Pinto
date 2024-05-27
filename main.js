@@ -61,6 +61,8 @@ const Jugar=(boton, letraselec)=>{
 
 const cerrarJuego = () =>{
 
+    const mensajePerdiste = document.getElementById("mensajePerdiste");
+    mensajePerdiste.innerHTML = "Perdiste";
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     dibujar();
 
@@ -164,13 +166,15 @@ BotonStart.addEventListener("click", startJuego);
 
 
 const REstartJuego = () => {
-    cont =0;
-    LetrasUsed=[];
-    palabra.innerHTML= "";
+    LetrasUsed = [];
+    errores = 0;
+    cont = 0;
+    palabra.innerHTML = "";
     LetrasUsadas.innerHTML = "";
-    BotonStart.style.display = "none";
+    document.getElementById("mensajePerdiste").innerHTML = ""; 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     PalabraRandom();
-    dibujar();    
+    dibujar();
     dibujarPalabra();
     
 };
